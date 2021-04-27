@@ -13,9 +13,12 @@
 		75E53E7F2638610B0085CE38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75E53E7D2638610B0085CE38 /* Main.storyboard */; };
 		75E53E812638610B0085CE38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75E53E802638610B0085CE38 /* Assets.xcassets */; };
 		75E53E842638610B0085CE38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75E53E822638610B0085CE38 /* LaunchScreen.storyboard */; };
+		B8712B2DD848005666D9D256 /* Pods_TeachSpring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C16E453FAA905977951FDF1 /* Pods_TeachSpring.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0484DEECBFA78A35C8088F9E /* Pods-TeachSpring.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachSpring.debug.xcconfig"; path = "Target Support Files/Pods-TeachSpring/Pods-TeachSpring.debug.xcconfig"; sourceTree = "<group>"; };
+		5C16E453FAA905977951FDF1 /* Pods_TeachSpring.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeachSpring.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75E53E742638610B0085CE38 /* TeachSpring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeachSpring.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75E53E772638610B0085CE38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75E53E792638610B0085CE38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		75E53E802638610B0085CE38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75E53E832638610B0085CE38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75E53E852638610B0085CE38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9765A6493F1C5A71AC5E4E08 /* Pods-TeachSpring.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachSpring.release.xcconfig"; path = "Target Support Files/Pods-TeachSpring/Pods-TeachSpring.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8712B2DD848005666D9D256 /* Pods_TeachSpring.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B83757FE1D7C29325CAB139 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C16E453FAA905977951FDF1 /* Pods_TeachSpring.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		75E53E6B2638610B0085CE38 = {
 			isa = PBXGroup;
 			children = (
 				75E53E762638610B0085CE38 /* TeachSpring */,
 				75E53E752638610B0085CE38 /* Products */,
+				D785B529D03EF548D85F4500 /* Pods */,
+				5B83757FE1D7C29325CAB139 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,16 @@
 			path = TeachSpring;
 			sourceTree = "<group>";
 		};
+		D785B529D03EF548D85F4500 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0484DEECBFA78A35C8088F9E /* Pods-TeachSpring.debug.xcconfig */,
+				9765A6493F1C5A71AC5E4E08 /* Pods-TeachSpring.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75E53E882638610B0085CE38 /* Build configuration list for PBXNativeTarget "TeachSpring" */;
 			buildPhases = (
+				E2FB2E4644E8300F18F6AFC1 /* [CP] Check Pods Manifest.lock */,
 				75E53E702638610B0085CE38 /* Sources */,
 				75E53E712638610B0085CE38 /* Frameworks */,
 				75E53E722638610B0085CE38 /* Resources */,
+				502239F28593C7BFA60266DC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		502239F28593C7BFA60266DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TeachSpring/Pods-TeachSpring-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TeachSpring/Pods-TeachSpring-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TeachSpring/Pods-TeachSpring-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2FB2E4644E8300F18F6AFC1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TeachSpring-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		75E53E702638610B0085CE38 /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		75E53E892638610B0085CE38 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0484DEECBFA78A35C8088F9E /* Pods-TeachSpring.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -301,6 +371,7 @@
 		};
 		75E53E8A2638610B0085CE38 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9765A6493F1C5A71AC5E4E08 /* Pods-TeachSpring.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
