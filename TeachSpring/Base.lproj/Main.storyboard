@@ -3,6 +3,7 @@
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,9 +20,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="luX-F8-kXH" customClass="SpringView" customModule="Spring">
                                 <rect key="frame" x="59" y="90" width="202" height="158"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70n-Mj-gJI">
-                                        <rect key="frame" x="63" y="53.5" width="76" height="51.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Test" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70n-Mj-gJI">
+                                        <rect key="frame" x="8" y="8" width="186" height="142"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -33,29 +34,48 @@
                                     <constraint firstItem="70n-Mj-gJI" firstAttribute="centerY" secondItem="luX-F8-kXH" secondAttribute="centerY" id="ahm-Kl-fvR"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autohide" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="force">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="pop"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="NO"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="duration">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k98-bz-XJp" customClass="SpringButton" customModule="Spring">
+                                <rect key="frame" x="110" y="438" width="100" height="30"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <state key="normal" title="Run Animation">
+                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="runSpringAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tKW-d8-Obo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="k98-bz-XJp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Etk-Hi-ahD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="k98-bz-XJp" secondAttribute="bottom" constant="100" id="Qnh-dZ-wTH"/>
                             <constraint firstItem="luX-F8-kXH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="59" id="f4U-nG-YTs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="luX-F8-kXH" secondAttribute="trailing" constant="59" id="kHH-AB-9o7"/>
                             <constraint firstItem="luX-F8-kXH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="rEC-gc-psZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="animeteTittle" destination="70n-Mj-gJI" id="0iA-rY-7N2"/>
+                        <outlet property="springAnimation" destination="luX-F8-kXH" id="zDP-Gd-r6B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -63,6 +83,12 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
