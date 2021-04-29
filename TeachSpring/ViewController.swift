@@ -16,14 +16,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var springAnimation: SpringView!
 
     @IBAction func runSpringAnimation(_ sender: SpringButton) {
-        for animate in myAnimation{
-        springAnimation.animation = animate.nameAnimate
-        springAnimation.force = CGFloat(animate.force)
-        springAnimation.duration = CGFloat(animate.duration)
+        let animate = myAnimation.randomElement()
+        springAnimation.animation = animate?.nameAnimate ?? "shake"
+        springAnimation.force = CGFloat(animate?.force ?? 1)
+        springAnimation.duration = CGFloat(animate?.duration ?? 1)
         springAnimation.animate()
         
-        animeteTittle.text = String(animate.title)
-        }
+        animeteTittle.text = String(animate?.title ?? "not found")
+        
         sender.animation = "squeezeUp"
         sender.animate()
     }
