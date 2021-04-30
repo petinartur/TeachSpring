@@ -5,42 +5,28 @@
 //  Created by Артур Петин on 28.04.2021.
 //
 
-struct Animations {
-    let nameAnimate: String
-    let force: Int
-    let duration: Int
+struct Animation {
     
-    var title: String{
-        "animation \(nameAnimate), force \(force), duration \(duration)"
+    let name: String
+    let force: Float
+    let duration: Float
+    let delay: Float
+    
+    var description: String {
+        """
+        preset: \(name)
+        force: \(String(format: "%.02f", force))
+        duration: \(String(format: "%.02f", duration))
+        delay: \(String(format: "%.02f", delay))
+        """
     }
     
-    static func getAnimation() -> [Animations]{
-        [
-            Animations(
-                nameAnimate: "slideLeft",
-                force: 1,
-                duration: 2
-            ),
-            Animations(
-                nameAnimate: "fadeIn",
-                force: 2,
-                duration: 1
-            ),
-            Animations(
-                nameAnimate: "shake",
-                force: 1,
-                duration: 1
-            ),
-            Animations(
-                nameAnimate: "pop",
-                force: 2,
-                duration: 2
-            ),
-            Animations(
-                nameAnimate: "morph",
-                force: 1,
-                duration: 2
-            )
-        ]
+    static func getRandomAnimation() -> Animation {
+        Animation(
+            name: DataManager.shared.animations.randomElement()?.rawValue ?? "sliderUp",
+            force: Float.random(in: 1...2),
+            duration: Float.random(in: 1...2),
+            delay: 0.3
+        )
     }
 }

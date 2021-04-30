@@ -9,23 +9,23 @@ import Spring
 
 class ViewController: UIViewController {
     
-    let myAnimation = Animations.getAnimation()
     
     @IBOutlet weak var animeteTittle: UILabel!
-    
     @IBOutlet weak var springAnimation: SpringView!
-
+    
+    private var animation = Animation.getRandomAnimation()
+    
     @IBAction func runSpringAnimation(_ sender: SpringButton) {
-        let animate = myAnimation.randomElement()
-        springAnimation.animation = animate?.nameAnimate ?? "shake"
-        springAnimation.force = CGFloat(animate?.force ?? 1)
-        springAnimation.duration = CGFloat(animate?.duration ?? 1)
+        animeteTittle.text = animation.description
+        
+        springAnimation.animation = animation.name
+        springAnimation.force = CGFloat(animation.force)
+        springAnimation.delay = CGFloat(animation.delay)
+        springAnimation.duration = CGFloat(animation.duration)
         springAnimation.animate()
         
-        animeteTittle.text = String(animate?.title ?? "not found")
-        
-        sender.animation = "squeezeUp"
-        sender.animate()
+        animation = Animation.getRandomAnimation()
+        sender.setTitle("Run \(animation.name)", for: .normal)
     }
     
     
